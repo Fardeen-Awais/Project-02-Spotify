@@ -17,6 +17,5 @@ This is the spofify clone that i made for learning purpose
 Authors
 - Fardeen Founder of Alfarnex
 
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+
 
