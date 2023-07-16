@@ -15,6 +15,13 @@ This is the spofify clone that i made for learning purpose
 - Tailwind - For Styling
 - mwMerge - Avoiding unwanted merge
 
+### Commit details
+
+In this commit we will learn about how to use provider in supabase. We install some usefull packages first: 
+``` 
+yarn add @supabase/auth-helpers-nextjs @supabase/supabase-js @supabase/auth-helpers-react
+```
+
 Authors
 - Fardeen Founder of Alfarnex
 
