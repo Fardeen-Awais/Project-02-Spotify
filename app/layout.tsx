@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}> 
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider/>
+            <ModalProvider/> {/* Showing the modal provider */}
           <Sidebar>
             {children}
           </Sidebar>

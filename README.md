@@ -15,13 +15,19 @@ This is the spofify clone that i made for learning purpose
 - Supabase - A database
 - Tailwind - For Styling
 - mwMerge - Avoiding unwanted merge
+- React-icons - Best and all React icons
+- Redix UI - The ui library
 
 ### Commit details
 
-In this commit we will learn about how to use provider in supabase. We install some usefull packages first: 
-``` 
-yarn add @supabase/auth-helpers-nextjs @supabase/supabase-js @supabase/auth-helpers-react
-```
+In this commit we use redix ui to make the modal. 
+
+We show our modal in layout before the navbar.
+This modalProvider has an Modal component. Which gets some props. 
+{isOpen,onChange,title,description,children}.
+
+After giving that props to the Modal component we use redix to make the modal.
+So, it looks better. Check Modal.tsx to find how the modal component we make.
 
 Authors
 - Fardeen Founder of Alfarnex
