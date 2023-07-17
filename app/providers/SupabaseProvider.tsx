@@ -1,3 +1,4 @@
+'use client'
 // Import necessary modules and components
 import { Database } from "@/types_db"
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
