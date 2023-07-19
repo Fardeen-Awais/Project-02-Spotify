@@ -9,6 +9,7 @@ This is the spofify clone that i made for learning purpose
 - Adding a proper header with custom style twMerge ([commit 39ea1c1](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/39ea1c1))
 - Adding authetication providers ([commit a4822c5](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/a4822c5))
 - Simple model with Redix ([commit 12bfaa6](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/12bfaa6))
+- Information about zustand and modals Provider ([commit 43bd282](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/43bd282))
 
 ### Built With
 - Next.js - The web framework used
@@ -31,20 +32,23 @@ We have Hooks for statemanagement using zustand in useAuthmodal.
 
 Let's break it down piece by piece.
 
-import { create } from "zustand";
+```import { create } from "zustand";```
 This line imports the create function from the zustand library. zustand is a state management library for React. It allows us to create and manage state in our React components.
-
+```
 interface AuthModalStore {
     isOpen: Boolean
     onOpen: ()=> void
     onClose: () => void
 }
+```
 This line defines an interface called AuthModalStore. This interface defines the state that our modal will have. The state consists of three properties:
 
 isOpen: A boolean value that indicates whether the modal is open or closed.
 onOpen: A function that is called when the modal is opened.
 onClose: A function that is called when the modal is closed.
+```
 const useAuthModal = create<AuthModalStore>((set)=>({ isOpen:false, onOpen: ()=> set({isOpen:true}), onClose:()=> set({isOpen:false})}))
+```
 
 This line creates a function called useAuthModal. This function returns a hook that we can use in our React components. The hook takes a single argument, which is a function that is used to update the state of the modal. The hook returns an object that contains the three properties defined in the AuthModalStore interface.
 
