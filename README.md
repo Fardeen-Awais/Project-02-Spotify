@@ -9,7 +9,7 @@ This is the spofify clone that i made for learning purpose
 - Adding a proper header with custom style twMerge ([commit 39ea1c1](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/39ea1c1))
 - Adding authetication providers ([commit a4822c5](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/a4822c5))
 - Simple model with Redix ([commit 12bfaa6](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/12bfaa6))
-- Information about zustand and modals Provider ([commit 43bd282](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/43bd282))
+- Information about zustand and modals Provider ([commit 4db667d](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/4db667d))
 
 ### Built With
 - Next.js - The web framework used
