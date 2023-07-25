@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google'
 import SupabaseProvider from './providers/SupabaseProvider'
 import UserProvider from './providers/UserProvider'
 import ModalProvider from './providers/ModalProvider'
+import ToasterProvider from './providers/ToasterProvider'
 
 const inter = Poppins({ subsets: ['latin'], weight: ['400'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}> 
+      <ToasterProvider/>
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider/> {/* Showing the modal provider */}
