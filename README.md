@@ -11,6 +11,7 @@ This is the spofify clone that i made for learning purpose
 - Simple model with Redix ([commit 12bfaa6](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/12bfaa6))
 - Information about zustand and modals Provider ([commit 4db667d](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/4db667d))
 
+
 ### Built With
 - Next.js - The web framework used
 - Typescript - For Type checking
@@ -22,63 +23,19 @@ This is the spofify clone that i made for learning purpose
 
 ### Commit details
 
-In Providers, ModalProvider.tsx
-We have an AuthModal Component. In Auth model component we import modal and give it the props to the modal component. 
-In modal component, We have fully styled component which require these props.
+In this commit, we simply add github login provider and also use the logout button and account button when user login successfully.
 
-ModalProvider -> Authmodal -> Modal 
+#### For activating github login: 
 
-We have Hooks for statemanagement using zustand in useAuthmodal. 
-
-Let's break it down piece by piece.
-
-```import { create } from "zustand";```
-This line imports the create function from the zustand library. zustand is a state management library for React. It allows us to create and manage state in our React components.
 ```
-interface AuthModalStore {
-    isOpen: Boolean
-    onOpen: ()=> void
-    onClose: () => void
-}
+Step #01: Go to github and go to setting
+Step #02: Go to Developer setting in the bottom.
+Step #03: In the developer setting 
+Step #04: Click on OAuth App.
+Step #05: Create the project and set url.
+Step #06: You will get client id and client secret.
+Step #07: Paste these creditials to the github supabase provider
 ```
-This line defines an interface called AuthModalStore. This interface defines the state that our modal will have. The state consists of three properties:
-
-isOpen: A boolean value that indicates whether the modal is open or closed.
-onOpen: A function that is called when the modal is opened.
-onClose: A function that is called when the modal is closed.
-```
-const useAuthModal = create<AuthModalStore>((set)=>({ isOpen:false, onOpen: ()=> set({isOpen:true}), onClose:()=> set({isOpen:false})}))
-```
-
-This line creates a function called useAuthModal. This function returns a hook that we can use in our React components. The hook takes a single argument, which is a function that is used to update the state of the modal. The hook returns an object that contains the three properties defined in the AuthModalStore interface.
-
-Here's how we can use the useAuthModal hook in a React component:
-
-JavaScript
-```
-const App = () => {
-  const [isOpen, setIsOpen] = useAuthModal();
-
-  const handleOpen = () => {
-    setIsOpen(true);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
-
-  return (
-    <div>
-      <button onClick={handleOpen}>Open modal</button>
-      {isOpen && <AuthModal onClose={handleClose} />}
-    </div>
-  );
-};
-```
-In this component, we use the useAuthModal hook to create a variable called isOpen. This variable stores the state of the modal. We also use the useAuthModal hook to create two functions called handleOpen and handleClose. These functions are used to open and close the modal.
-
-Finally, we render a button that calls the handleOpen function when it is clicked. We also render a modal component if the isOpen variable is true. The modal component will close when the handleClose function is called.
-
 ### Authors
 - Fardeen Founder of Alfarnex
 
