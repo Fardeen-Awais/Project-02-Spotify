@@ -11,6 +11,7 @@ This is the spofify clone that i made for learning purpose
 - Simple model with Redix ([commit 12bfaa6](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/12bfaa6))
 - Information about zustand and modals Provider ([commit 4db667d](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/4db667d))
 - Adding Github login Provider ([commit 176dbde](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/176dbde))
+- Adding toaster Notification in successfull logout ([commit a23ce3e](https://github.com/Fardeen-Awais/Project-02-Spotify/commit/a23ce3e))
 
 ### Built With
 - Next.js - The web framework used
@@ -24,21 +25,7 @@ This is the spofify clone that i made for learning purpose
 
 ### Commit details
 
-In this commit we will add the Toaster that gives us the notification message of login and logout.
 
-Step 01: Create ToasterProvider.tsx in the provider folders 
-
-Install react-hot toast
-``` 
-yarn add react-hot-toast
-```
-For more information visit: React-hot-toast ([Click here](https://react-hot-toast.com/))
-
-> In ToasterProvider.tsx file we import the toaster and paste it. 
-> Then we add this provider to our layout to access accross the application. 
-> Then we add the toast message in every successful logout
-
-Check the code for more information.
 
 ### Authors
 - Fardeen Founder of Alfarnex

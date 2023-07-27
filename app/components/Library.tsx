@@ -1,10 +1,21 @@
 import { TbPlaylist } from 'react-icons/tb';
 import { AiOutlinePlus } from 'react-icons/ai';
-
+import useAuthModal from '../hooks/useAuthmodal';
+import { useUser } from '@supabase/auth-helpers-react';
+import useUploadModal from '../hooks/useUploadModal';
 const Library = () => {
+
+    const authModal = useAuthModal(); // getting the login modal
+    const user = useUser() // Getting the user 
+    const UploadModal = useUploadModal()
     const onClick = () => {
-        // handle upload later
-    };
+        if(!user){
+            console.info('There is no user')
+            return authModal.onOpen(); //Popup if user is not login 
+        }
+        // TODO: Check for subscription 
+        return UploadModal.onOpen();
+};
 
     return (
         <div className="flex flex-col">
