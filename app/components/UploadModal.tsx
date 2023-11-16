@@ -11,7 +11,7 @@ import useUploadModal from "../hooks/useUploadModal";
 import { useUser } from "../hooks/useUser";
 
 import Modal from './Modal';
-import Input from './Input';
+import { Input } from "./ui/input";
 import Button from './Button';
 
 const UploadModal = () => {
@@ -45,7 +45,7 @@ const UploadModal = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (values) => {
     try {
       setIsLoading(true);
-      
+
       const imageFile = values.image?.[0];
       const songFile = values.song?.[0];
 
@@ -111,6 +111,7 @@ const UploadModal = () => {
       toast.success('Song created!');
       reset();
       uploadModal.onClose();
+        
     } catch (error) {
       toast.error('Something went wrong');
     } finally {
@@ -141,12 +142,13 @@ const UploadModal = () => {
           {...register('author', { required: true })}
           placeholder="Song author"
         />
+        
+
         <div>
           <div className="pb-1">
             Select a song file
           </div>
           <Input
-            placeholder="test" 
             disabled={isLoading}
             type="file"
             accept=".mp3"
@@ -154,6 +156,7 @@ const UploadModal = () => {
             {...register('song', { required: true })}
           />
         </div>
+
         <div>
           <div className="pb-1">
             Select an image
@@ -167,6 +170,7 @@ const UploadModal = () => {
             {...register('image', { required: true })}
           />
         </div>
+        
         <Button disabled={isLoading} type="submit">
           Create
         </Button>

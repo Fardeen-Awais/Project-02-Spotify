@@ -1,8 +1,13 @@
 import Image from 'next/image';
-import Header from './components/Header';
-import ListItem from './components/ListItem';
+import Header from '../components/Header';
+import ListItem from '../components/ListItem';
+import getSongs from '@/actions/getSongs';
+import PageContent from './_compoents/PageContent';
 
-export default function Home() {
+export const revalidate = 0
+
+export default async function Home() {
+  const songs = await getSongs()
   return (
     <div className='bg-neutral-900 rounded-lg overflow-hidden h-screen w-full '>
       <Header>
@@ -19,8 +24,13 @@ export default function Home() {
           <div className='text-sm mt-2 '>
             List of Songs
           </div>
+          <div>
+            <PageContent songs={songs}/>
+          </div>
         </div>
       </Header>
+
+
     </div>
   );
 }
