@@ -5,6 +5,7 @@ import SupabaseProvider from './providers/SupabaseProvider'
 import UserProvider from './providers/UserProvider'
 import ModalProvider from './providers/ModalProvider'
 import ToasterProvider from './providers/ToasterProvider'
+import getSongsByUserId from '@/actions/getSongsByUserId'
 
 const inter = Poppins({ subsets: ['latin'], weight: ['400'] })
 
@@ -13,11 +14,14 @@ export const metadata = {
   description: 'Spotify clone with supabase',
 }
 
-export default function RootLayout({
+export const revalidate = 0;
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const userSongs = await getSongsByUserId()
   return (
     <html lang="en">
       <body className={inter.className}> 
@@ -25,7 +29,7 @@ export default function RootLayout({
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider/> {/* Showing the modal provider */}
-          <Sidebar>
+          <Sidebar songs={userSongs}> {/* Bejh rhay hai data ko sidebar mai dikhanay k liay*/}
             {children}
           </Sidebar>
           </UserProvider>

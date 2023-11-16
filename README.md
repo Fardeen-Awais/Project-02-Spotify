@@ -25,7 +25,7 @@ This is the spofify clone that i made for learning purpose
 
 ### Commit details
 
-Timestamps:3:13:21
+Timestamps:3:27:26
 
 ### Authors
 - Fardeen Founder of Alfarnex
