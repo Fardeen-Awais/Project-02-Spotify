@@ -5,6 +5,7 @@ import { useUser } from '@supabase/auth-helpers-react';
 import useUploadModal from '../hooks/useUploadModal';
 import { Song } from '@/types';
 import MediaItems from './MediaItems';
+import useOnPlay from '../hooks/useOnPlay';
 
 interface LibraryProps {
     songs: Song[]
@@ -15,6 +16,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
     const authModal = useAuthModal(); // getting the login modal
     const user = useUser() // Getting the user 
     const UploadModal = useUploadModal()
+    const onPlay = useOnPlay(songs)
     const onClick = () => {
         if (!user) {
             console.info('There is no user')
@@ -25,7 +27,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col h-full">
             <div className="flex items-center px-5 pt-4">
                 <div className="inline-flex items-center gap-x-2">
                     <TbPlaylist className='text-neutral-400 cursor-pointer' size={26} />
@@ -36,7 +38,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
             <div className='flex flex-col gap-y-2 mt-4 px-3'>
                 {songs.map((item) => (
                     <MediaItems
-                        onClick={() => { }}
+                        onClick={(id:string) => onPlay(id)}
                         key={item.id}
                         data={item}
                     />

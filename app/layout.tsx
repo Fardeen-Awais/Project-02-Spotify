@@ -25,15 +25,15 @@ export default async function RootLayout({
   const userSongs = await getSongsByUserId()
   return (
     <html lang="en">
-      <body className={inter.className}> 
-      <ToasterProvider/>
+      <body className={inter.className}>
+        <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider/> {/* Showing the modal provider */}
-          <Sidebar songs={userSongs}> {/* Bejh rhay hai data ko sidebar mai dikhanay k liay*/}
-            {children}
-          </Sidebar>
-          <Player/>
+            <ModalProvider /> {/* Showing the modal provider */}
+            <Sidebar songs={userSongs}> {/* Bejh rhay hai data ko sidebar mai dikhanay k liay*/}
+              {children}
+            </Sidebar>
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
